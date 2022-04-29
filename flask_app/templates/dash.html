@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/dash.css') }}">
+    <style>
+        body {
+            background-image: "{{url_for('static', filename='assets/try.jpg')}}"; 
+            height: 100%;
+            width: 100%;
+        }
+        </style>
+    <title>Cube Iterator</title>
+</head>
+<body background="{{url_for('static', filename='assets/try.jpg')}}"></body>
+<body>
+    <div id="container">
+        <div id="link"><a id="logout" href="/logout">Logout</a></div>
+        <div id="welcome">
+            <h1 id="head">Enjoy Cube Iterator, <a id="name_link" href="/profile/{{session['user_id']}}">{{session['user_name']}}</a>!</h1>
+        </div>
+        <div id="scram">
+            {% for move in scram %}
+            <span>{{move}}</span>
+            {% endfor %}
+        </div>
+
+        
+        <div class="buttons">
+            <button id="startStop" onkeydown="startStop()" onclick="startStop()">Start</button>  <a href="/dash"><button id="reset" onclick="reset()">Reset</button></a>
+        </div>
+        <form action="/save_time" method="post">
+            <input type="hidden" name="user_id" value="{{session['user_id']}}">
+            <div id="display">
+                00:00:00
+            </div>
+            <input type="hidden" id="time" value="00:00:00" name="time">
+            <input onclick="save()" id="sub_btn" type="submit" value="Save Time">
+        </form>
+    
+    </div>
+    <script src="/static/js/backup.js"></script>
+    </div>
+</body>
+</html>

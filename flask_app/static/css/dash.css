@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    margin: 0 auto;
+    width: 1000px;
+    min-height: 500px;
+}
+
+#logout, #link {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#head {
+    color: rgb(102, 125, 230);
+    text-align: center;
+    font-size: 80px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#reg_log {
+    color: gray;
+    text-align: center;
+}
+
+.time {
+    color: white;
+    text-align: center;
+}
+
+#display{
+    width: 100%;
+    font-size: 100px;
+    text-align: center;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.buttons{
+    text-align: center;
+    
+}
+
+#sub_btn {
+    background-color: blue;
+    color: red;
+    text-align: center;
+    margin-left: 47%;
+}
+
+#scram {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+#startStop, #reset, #sub_btn {
+    background-color: blue;
+    color: red;
+    height: 40px;
+    width: 80px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#name_link {
+    color: rgb(102, 125, 230);
+}

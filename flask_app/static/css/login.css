@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1000;
+    margin: 0 auto;
+    border-radius: 50%;
+    min-height: 450px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1, label {
+    color: gray;
+}
+
+#button {
+    color: red;
+    background-color: blue;
+    margin-left: 510px;
+    margin-bottom: 50px;
+}
+
+.form-group {
+    margin-left: 310px;
+    justify-content: center;
+}
+
+.form-control {
+    width: 500px;
+}
+
+.text-left {
+    margin-top: 20px;
+}

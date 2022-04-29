@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/profile.css') }}">
+    <style>
+        body {
+            background-image: "{{url_for('static', filename='assets/try.jpg')}}"; 
+            height: 100%;
+            width: 100%;
+        }
+        </style>
+    <title>Profile</title>
+</head>
+<body background="{{url_for('static', filename='assets/try.jpg')}}"></body>
+<body>
+    <div id="container">
+        <div id="logout"><a id="Tlink" href="/logout">Logout</a>  <a id="Tlink" href="/dash">Timer</a></div>
+        <h1 id="head">Hello, {{session['user_name']}}! Here are your solve times.</h1>
+        <div id="body">
+            <div id="left-col">
+                <table id="times">
+                    <thead>
+                        <tr>
+                            <td colspan="3">
+                                <h1 id="time-header">Your Time History</h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users.solves %}
+                        <tr>
+                            <td>{{user.time}}</td>
+                            <td>{{user.created_at.strftime("%b %d %Y")}}</td>
+                            <td><a id="del_link" href="/delete/{{user.id}}">Remove Time</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div id="right-col">
+                <table id="times">
+                    <thead>
+                        <tr>
+                            <td colspan="3">
+                                <h1 id="time-header">Your Averages of 3</h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users.solves %}
+                        <tr>
+                            <td>{{user.time}}</td>
+                            <td>{{user.created_at.strftime("%b %d %Y")}}</td>
+                            <td><a id="del_link" href="/delete/{{user.id}}">Remove Time</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

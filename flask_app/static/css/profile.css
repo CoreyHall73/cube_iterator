@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    margin: 0 auto;
+}
+
+#head {
+    color: rgb(102, 125, 230);
+    text-align: center;
+    font-size: 80px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#times {
+    color: white;
+    text-align: center;
+    width: 500px;
+}
+
+#Tlink {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#del_link{
+    text-decoration: none;
+    color: red;
+}
+
+#logout {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#time-header {
+    color: white;
+}
+
+#left-col, #right-col{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#body{
+    display: flex;
+    justify-content: space-around;
+}

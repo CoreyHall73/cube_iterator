@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/index.css') }}">
+        <style>
+            body {
+                background-image: "{{url_for('static', filename='assets/try.jpg')}}"; 
+                height: 100%;
+                width: 100%;
+            }
+            </style>
+    <title>Cube Iterator</title>
+</head>
+<body background="{{url_for('static', filename='assets/try.jpg')}}">
+    <div id="container">
+        <div id="welcome">
+            <h1 id="head">Welcome to Cube Iterator!</h1>
+        </div>
+        <div id="reg_log">
+            <h2><a href="/register_page">Register</a> to track your solve times and averages, or <a href="login_page">Login</a> to your account.</h2>
+        </div>
+        <h1 id="or">Or</h1>
+        <h3>Feel free to use our timer without an account</h3>
+        <div id="scram">
+            {% for move in scram %}
+            <span>{{move}}</span>
+            {% endfor %}
+        </div>
+        <div id="display">
+            00:00:00
+        </div>
+        <div class="buttons">
+            <button id="startStop" onkeydown="startStop()" onclick="startStop()">Start</button>   <a href="/dash"><button id="reset" onclick="reset()">Reset</button></a>
+        </div>
+    </div>
+    <script src="/static/js/backup.js"></script>
+</body>
+</html>
